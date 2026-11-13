@@ -1,4 +1,4 @@
-#
+﻿#
 # https://github.com/actions/checkout/issues/1590#issuecomment-2567109195
 #
 # We manually start a container and execute scripts in it instead of using `jobs.build.container`,
@@ -13,7 +13,9 @@
 #    docker run --name build-container -d -e GITHUB_REPOSITORY -v ...
 #
 name: Action Build System
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 env:
   CONTAINER: ubuntu:18.04
 
